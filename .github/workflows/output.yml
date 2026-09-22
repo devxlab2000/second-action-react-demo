@@ -1,0 +1,12 @@
+name: output information
+on: [push, workflow_dispatch]
+jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+          - name: output github context
+            run: |
+              echo "Repository: ${{ github.repository }}"
+              echo "Branch: ${{ github.ref }}"
+              echo "Commit SHA: ${{ github.sha }}"
+              echo "Actor: ${{ github.actor }}"
